@@ -6,7 +6,7 @@
 //
 
 struct CalculatorItemQueue {
-    private var queue: [CalculateItem?] = []
+     var queue: [CalculateItem?] = []
     private var headIndex: Int = 0
     
     var count: Int {
@@ -24,7 +24,7 @@ struct CalculatorItemQueue {
     @discardableResult
     mutating func dequeue() -> CalculateItem? {
         guard headIndex <= queue.count, let element = queue[safe: headIndex] else { return nil }
-        
+
         queue[headIndex] = nil
         headIndex += 1
         if headIndex > (queue.count / 4) {
